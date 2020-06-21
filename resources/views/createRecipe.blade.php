@@ -78,7 +78,7 @@
                         {{ Form::label('title', 'Title') }}
                         {{ Form::text('title') }} 
                     </div><div>
-                        {{ Form::label('picture', 'Picture') }}
+                        {{ Form::label('image', 'Picture') }}
                         {{ Form::file('image') }}
                     </div><div>  
                         {{ Form::label('description', 'Description') }}

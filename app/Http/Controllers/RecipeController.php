@@ -6,6 +6,7 @@ use App\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use function view;
 
 class RecipeController extends Controller
@@ -46,9 +47,14 @@ class RecipeController extends Controller
             'difficulty' => 'required',
             'serves' => 'required',
             'ingredients' => 'required|string|min:2|max:10000',
-            'preparation' => 'required|string|min:2|max:10000'
+            'preparation' => 'required|string|min:2|max:10000',
+            'image' => 'file|image|max:5000'
         );        
         $this->validate($request, $rules);
+        
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('images', 'public');
+        } else $path = NULL;
         
         $recipe = Recipe::create([
             'title' => $request->title,
@@ -59,7 +65,8 @@ class RecipeController extends Controller
             'difficulty' => $request->difficulty,
             'serves' => $request->serves,
             'ingredients' => $request->ingredients,
-            'preparation' => $request->preparation
+            'preparation' => $request->preparation,
+            'image' => $path,
         ]);
         
         return redirect()->action('RecipeController@show', $recipe->id);

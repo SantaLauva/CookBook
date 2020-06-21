@@ -24,6 +24,7 @@ class CreateRecipesTable extends Migration
             $table->integer('serves');
             $table->text('ingredients', 10000);
             $table->text('preparation', 10000);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

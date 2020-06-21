@@ -9,7 +9,7 @@ class Recipe extends Model
     protected $fillable = [
         'title', 'user_id', 'description', 'prep', 
         'cook', 'difficulty', 'serves', 'ingredients', 
-        'preparation',
+        'preparation', 'image',
     ];
     
     public function user() {

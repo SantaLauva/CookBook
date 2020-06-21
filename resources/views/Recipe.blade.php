@@ -14,8 +14,13 @@
                 <h5 class="card-text"> {{ $recipe->serves }} </h5>
                 <h5 class="card-text"> {{ $recipe->ingredients }} </h5>
                 <h5 class="card-text"> {{ $recipe->preparation }} </h5>
-            </div>          
+            </div>
+        </div>
     </div>
+    
+    @if ($recipe->image)
+    <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture'>
+    @endif
 </div>
 @endsection
 
