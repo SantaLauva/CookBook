@@ -8,50 +8,14 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="{{asset ('css/createRecipe.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-        </style>
     </head>
     <body>
+            
         <div class="position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -70,40 +34,56 @@
             <div style = "text-align: center">
                 <h1>Create Recipe</h1>
             </div>
+          
             
-            <div class = "flex-center position-ref">
+            <div class = "forma flex-center position-ref">
                 <div>
-                    {{ Form::open(array('action' => 'RecipeController@store', 'files' => true)) }}   <!--array('action' => 'RecipeController@store', 'files' => true)-->
+                    {{ Form::open(array('action' => 'RecipeController@store', 'files' => true,)) }}   <!--array('action' => 'RecipeController@store', 'files' => true)-->
+                    <div class="title">
                     <div>
                         {{ Form::label('title', 'Title') }}
                         {{ Form::text('title') }} 
-                    </div><div>
+                    </div>
+                    </div>
+                    <div>
                         {{ Form::label('image', 'Picture') }}
-                        {{ Form::file('image') }}
-                    </div><div>  
+                        {{ Form::file('image',['class' => 'btn btn-default']) }}
+                    </div>
+                    <div class="description">
+                    <div>  
                         {{ Form::label('description', 'Description') }}
                         {{ Form::textarea('description') }} 
-                    </div><div>
+                    </div>
+                    </div>
+                    <div>
                         {{ Form::label('prep', 'Preparation Time') }}
                         {{ Form::text('prep') }} 
-                    </div><div>
+                    </div>
+                    <div>
                         {{ Form::label('cook', 'Cooking Time') }}
                         {{ Form::text('cook') }} 
-                    </div><div>
+                    </div>
+                    <div>
                         {{ Form::label('difficulty', 'Difficulty') }}
                         {{ Form::select('difficulty', array('Easy' => 'Easy', 'Medium' => 'Medium', 'Hard' => 'Hard')) }}
-                    </div><div>
+                    </div>
+                    <div>
                         {{ Form::label('serves', 'Serves') }}
                         {{ Form::text('serves') }}
-                    </div><div>   
+                    </div>
+                    <div>   
                         {{ Form::label('ingredients', 'Ingredients') }}
                         {{ Form::textarea('ingredients') }} 
-                    </div><div>
+                    </div>
+                    <div>
                         {{ Form::label('preparation', 'Preparation') }}
                         {{ Form::textarea('preparation') }} 
                     </div>
-                    {!! Form::submit('Create') !!}
+                   
+                    {!! Form::submit('Create', ['class' => 'btn btn-success']) !!}
+                   
                     {!! Form::close() !!}
+                   
                 </div>
                 <div>
                     <ul>
@@ -113,7 +93,7 @@
                     </ul>
                 </div>
             </div>
-            
+
 
                 
             </div>
