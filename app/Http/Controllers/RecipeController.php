@@ -45,12 +45,10 @@ class RecipeController extends Controller
             'cook' => 'required|string|max:10',
             'difficulty' => 'required',
             'serves' => 'required',
-            'ingredients' => 'required|string|min:2|max:1000',
-            'preparation' => 'required|string|min:2|max:1000'
+            'ingredients' => 'required|string|min:2|max:10000',
+            'preparation' => 'required|string|min:2|max:10000'
         );        
         $this->validate($request, $rules);
-        
-        //$id = Auth::User()->id;
         
         $recipe = Recipe::create([
             'title' => $request->title,
@@ -64,7 +62,7 @@ class RecipeController extends Controller
             'preparation' => $request->preparation
         ]);
         
-        //return redirect()->action('RecipeController@showRecipe', $recipe->id);
+        return redirect()->action('RecipeController@show', $recipe->id);
     }
 
     /**
@@ -75,7 +73,7 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('Recipe', ['recipe' => Recipe::find($id)]);
     }
 
     /**

@@ -22,8 +22,8 @@ class CreateRecipesTable extends Migration
             $table->string('cook', 10);
             $table->string('difficulty', 8);
             $table->integer('serves');
-            $table->string('ingredients', 1000);
-            $table->string('preparation', 1000);
+            $table->string('ingredients', 10000);
+            $table->string('preparation', 10000);
             $table->timestamps();
         });
     }
