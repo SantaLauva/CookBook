@@ -38,9 +38,6 @@
                     CookBook
                 </div>
 
-<<<<<<< HEAD
-
-=======
                 <nav class="navbar navbar-light bg-light">
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -49,7 +46,6 @@
                 </nav>
 
                 
->>>>>>> home_page_view_creation
             </div>
         </div>
     </body>
