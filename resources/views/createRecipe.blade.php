@@ -39,15 +39,19 @@
             <div class = "forma flex-center position-ref">
                 <div>
                     {{ Form::open(array('action' => 'RecipeController@store', 'files' => true,)) }}   <!--array('action' => 'RecipeController@store', 'files' => true)-->
+                    <div class="form group">
                     <div class="title">
                     <div>
                         {{ Form::label('title', 'Title') }}
                         {{ Form::text('title') }} 
                     </div>
                     </div>
+                    </div>
+                    <div class="form group">
                     <div>
                         {{ Form::label('image', 'Picture') }}
                         {{ Form::file('image',['class' => 'btn btn-default']) }}
+                    </div>
                     </div>
                     <div class="description">
                     <div>  
