@@ -17,13 +17,13 @@ class CreateRecipesTable extends Migration
             $table->id();
             $table->string('title', 100);
             $table->foreignID('user_id')->constrained();
-            $table->string('description', 200);
+            $table->string('description', 200)->nullable();
             $table->string('prep', 10);
             $table->string('cook', 10);
             $table->string('difficulty', 8);
             $table->integer('serves');
-            $table->string('ingredients', 10000);
-            $table->string('preparation', 10000);
+            $table->text('ingredients', 10000);
+            $table->text('preparation', 10000);
             $table->timestamps();
         });
     }
