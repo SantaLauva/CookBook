@@ -47,4 +47,10 @@ class User extends Authenticatable
     public function wantToMakeList() {
         return $this->hasOne('App\WantToMakeList');
     }
+
+    //added 
+    public function comments() {
+        return $this->hasMany('App\Comment');
+    }
+
 }

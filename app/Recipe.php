@@ -23,4 +23,10 @@ class Recipe extends Model
     public function picture() {
         return $this->hasOne('App\Picture');
     }
+
+    //added
+    public function comments() {
+        return $this->hasMany('App\Comment');
+    }
+
 }
