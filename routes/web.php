@@ -25,3 +25,6 @@ Route::get('/createRecipe', 'RecipeController@create')->middleware('auth');
 Route::post('/createRecipe', 'RecipeController@store');
 
 Route::get('Recipe/{id}', 'RecipeController@show');
+
+Route::get('Recipes', 'AllRecipesController@show');
+Route::get('CookBooks', 'AllCookBooksController@show');
