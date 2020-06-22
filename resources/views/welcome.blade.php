@@ -45,7 +45,20 @@
                 </form>
                 </nav>
 
-  
+   <!--Retrieve user recipes-->
+   <div class="row">
+                    <div class="com-md-12">
+                        <br>
+                        <h3>Latest User recipes</h3>
+                        <br>
+                        
+                            @foreach($allrecipes as $recipe)
+                         
+                                <td>{{ $recipe->title }}</td>
+    
+                                <td>{{ $recipe->difficulty }}</td>
+                            @endforeach
+                    </div>
 
 
                 </div>
