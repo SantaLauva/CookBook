@@ -33,3 +33,5 @@ Route::get('CookBooks', 'AllCookBooksController@show');
 
 Route::get('Recipe/{id}/edit', 'RecipeController@edit');
 Route::post('Recipe/{id}/edit', 'RecipeController@update');
+
+Route::get('Recipe/{id}/delete', 'RecipeController@destroy');

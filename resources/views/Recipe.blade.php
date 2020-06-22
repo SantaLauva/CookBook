@@ -43,7 +43,8 @@
     @if(Auth::User()->id == $recipe->user_id)
         <h5>Edit Recipe</h5>
         <button type="button" id="edit" onclick="window.location='{{ action('RecipeController@edit', $recipe) }}'">Edit</button>
-        
+        <h5>Delete Recipe</h5>
+        <button type="button" id="delete" onclick="window.location='{{ action('RecipeController@destroy', $recipe->id) }}'">Delete</button>
        @endif
         
     

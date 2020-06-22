@@ -150,6 +150,11 @@ class RecipeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $recipe = Recipe::find($id);
+        if (Auth::User()->id == $recipe->user_id) {
+            Recipe::find($id)->delete();
+            return redirect()->action('RecipeController@index');
+        }
+        else return redirect()->action('RecipeController@show', $id);
     }
 }
