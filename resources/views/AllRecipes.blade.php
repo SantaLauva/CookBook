@@ -1,19 +1,22 @@
 @extends('layouts.app')
+<link href="{{asset ('css/AllRecipes.css')}}" rel="stylesheet">
+
 @section('content')
 
 
 <h1>All Recipes</h1>
 
-
+<div class="recipegallery">
     @foreach($allrecipes as $recipe)
         <div class='recipe'>
-            <div class='image'>
-                <a href="/Recipe/{{ $recipe->id }}">
-                    <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300">
-                </a>
+            <a href="/Recipe/{{ $recipe->id }}">
+                <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300">
+            </a>
+            <div class="title">
+                <h4>{{ $recipe->title }}</h4>
             </div>
-            <h2>{{ $recipe->title }}</h2>
         </div>
     @endforeach
+</div>
 
 @endsection
