@@ -20,7 +20,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-    //
+        return view('AllRecipes', ['allrecipes' => Recipe::all()]);
     }
 
     /**
