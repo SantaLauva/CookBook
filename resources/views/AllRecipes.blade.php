@@ -3,7 +3,6 @@
 
 @section('content')
 
-
 <h1>All Recipes</h1>
 
 <div class="recipegallery">
