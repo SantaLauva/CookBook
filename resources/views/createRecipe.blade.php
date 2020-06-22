@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
-<<<<<<< HEAD
             <div>
-=======
     <head>
->>>>>>> 76e1b6adaf7a95c28dd4af18b2248561a9612800
         <title>CookBook</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -19,7 +16,6 @@
         <h1>Create Recipe</h1>
     </div>
 
-<<<<<<< HEAD
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
@@ -33,8 +29,6 @@
           
             
             <div>
-=======
->>>>>>> 76e1b6adaf7a95c28dd4af18b2248561a9612800
             <div class = "forma flex-center position-ref">
                 <div>
                     {{ Form::open(array('action' => 'RecipeController@store', 'files' => true,)) }}   <!--array('action' => 'RecipeController@store', 'files' => true)-->
@@ -96,9 +90,6 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 76e1b6adaf7a95c28dd4af18b2248561a9612800
 
 @endsection
