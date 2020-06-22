@@ -6,8 +6,6 @@ use App\Recipe;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\Facades\Image;
-use function public_path;
 use function redirect;
 use function view;
 
@@ -20,7 +18,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-    //
+        return view('AllRecipes', ['allrecipes' => Recipe::all()]);
     }
 
     /**
@@ -70,9 +68,6 @@ class RecipeController extends Controller
             'preparation' => $request->preparation,
             'image' => $path,
         ]);
-        
-        $image = Image::make(public_path('storage/'.$recipe->image))->fit(1000, 600);
-        $image = save();
         
         
         return redirect()->action('RecipeController@show', $recipe->id);
