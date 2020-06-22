@@ -49,14 +49,13 @@
 }
 
 body{
-    margin-top: 30px;
-
-    background-image:url(/storage/images/form_background.jpg);
+ 
+    background-image:url(/storage/images/form_background05.jpg);
     height: auto; /* You must set a specified height */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-    margin-bottom: 30px;
+
 }
 
 .forma{
