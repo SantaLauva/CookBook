@@ -40,8 +40,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link" href="{{ action('RecipeController@index') }}">Recipes</a></li>
-                        <li><a class="nav-link" href="{{ action('AllCookBooksController@show') }}">CookBooks</a></li>
+                        <li><a class="nav-link" href="{{ action('RecipeController@index') }}">{{ __('messages.Recipes') }}</a></li>
+                        <li><a class="nav-link" href="{{ action('AllCookBooksController@show') }}">{{ __('messages.CookBooks') }}</a></li>
                         @if (Auth::user())
                             <li><a class="nav-link" href="{{ action('RecipeController@create') }}">Add Recipe</a></li>
                         @endif                           
@@ -50,14 +50,17 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li><a class="nav-link" href="/lang/lv">LV</a></li>
+                        <li><a class="nav-link" href="/lang/en">EN</a></li>
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('messages.Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('messages.Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -70,7 +73,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('messages.Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
