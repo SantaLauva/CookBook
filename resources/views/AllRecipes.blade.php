@@ -6,10 +6,14 @@
 
 
     @foreach($allrecipes as $recipe)
-        <div>
+        <div class='recipe'>
+            <div class='image'>
+                <a href="/Recipe/{{ $recipe->id }}">
+                    <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300">
+                </a>
+            </div>
             <h2>{{ $recipe->title }}</h2>
         </div>
-    <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300">
     @endforeach
 
 @endsection

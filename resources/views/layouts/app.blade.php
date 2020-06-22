@@ -40,7 +40,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link" href="{{ action('AllRecipesController@show') }}">Recipes</a></li>
+                        <li><a class="nav-link" href="{{ action('RecipeController@index') }}">Recipes</a></li>
                         <li><a class="nav-link" href="{{ action('AllCookBooksController@show') }}">CookBooks</a></li>
                         @if (Auth::user())
                             <li><a class="nav-link" href="{{ action('RecipeController@create') }}">Add Recipe</a></li>
