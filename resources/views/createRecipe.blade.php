@@ -1,47 +1,21 @@
 @extends('layouts.app')
-@section('content')
 
-<<<<<<< HEAD
-            <div>
-=======
+    <head>
         <title>CookBook</title>
-
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="{{asset ('css/createRecipe.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-
     </head>
-    <body>
+    
+@section('content')
             
-        <div class="position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Account</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+    <div style = "text-align: center">
+        <h1>Create Recipe</h1>
+    </div>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-            
-            <div style = "text-align: center">
->>>>>>> CreateRecipe
-                <h1>Create Recipe</h1>
-            </div>
-          
-            
-<<<<<<< HEAD
-            <div>
-=======
             <div class = "forma flex-center position-ref">
->>>>>>> CreateRecipe
                 <div>
                     {{ Form::open(array('action' => 'RecipeController@store', 'files' => true,)) }}   <!--array('action' => 'RecipeController@store', 'files' => true)-->
                     <div class="form group">
@@ -102,9 +76,5 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> CreateRecipe
 
 @endsection
