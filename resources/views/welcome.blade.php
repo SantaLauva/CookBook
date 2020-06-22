@@ -55,8 +55,8 @@
                             @foreach($allrecipes as $recipe)
                          
                                 <td>{{ $recipe->title }}</td>
-    
-                                <td>{{ $recipe->difficulty }}</td>
+                                <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300" style="border-radius: 50%" >
+                                <!--<td>{{ $recipe->difficulty }}</td>-->
                             @endforeach
                     </div>
 
