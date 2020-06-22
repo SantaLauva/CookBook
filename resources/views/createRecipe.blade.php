@@ -1,6 +1,4 @@
 @extends('layouts.app')
-
-            <div>
     <head>
         <title>CookBook</title>
         <!-- Fonts -->
@@ -16,19 +14,6 @@
         <h1>Create Recipe</h1>
     </div>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-            
-            <div style = "text-align: center">
-                <h1>Create Recipe</h1>
-            </div>
-          
-            
-            <div>
             <div class = "forma flex-center position-ref">
                 <div>
                     {{ Form::open(array('action' => 'RecipeController@store', 'files' => true,)) }}   <!--array('action' => 'RecipeController@store', 'files' => true)-->
