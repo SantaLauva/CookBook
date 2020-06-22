@@ -2,7 +2,7 @@
 
 use App\Recipe;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +33,14 @@ Route::get('CookBooks', 'AllCookBooksController@show');
 
 Route::get('Recipe/{id}/edit', 'RecipeController@edit');
 Route::post('Recipe/{id}/edit', 'RecipeController@update');
+
+
+//for searching recipes
+Route::any ( '/search', function () {
+    $q = Request::get ( 'q' );
+    $return_recipe = Recipe::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'preparation', 'LIKE', '%' . $q . '%' )->get ();
+    if (count ( $return_recipe ) > 0)
+        return view ( 'welcome', ['allrecipes' =>  $return_recipe]);
+    else
+        return view ( 'welcome', ['allrecipes' =>  $return_recipe]);
+} );

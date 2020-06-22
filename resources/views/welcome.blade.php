@@ -12,12 +12,43 @@
                     CookBook
                 </div>
 
-                <nav class="navbar navbar-light d-flex justify-content-center">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                </nav>
+<!--new search bar-->
+<form action="/search" method="POST" role="search">
+    {{ csrf_field() }}
+    <div class="input-group">
+        <input type="text" class="form-control" name="q" placeholder="Search for a recipe"> 
+            <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+</form>
+
+<!--Search results are displayed here-->
+<div class="container">
+    @if(isset($details))
+    <div class="container ">
+            <div class="row">
+                <div class="welcome_recipe_gallery">
+                    @foreach($allrecipes as $recipe)
+                        <div class='recipe'>
+                            <a href="/Recipe/{{ $recipe->id }}">
+                            <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300">
+                            <div class="title">
+                                <h4>{{ $recipe->title }}</h4>
+                            </div>
+                            </a>
+                        </div>
+                    @endforeach
+                    </div>
+                </div>
+            </div>      
+    @endif
+</div>
+@if(count($allrecipes)> 0 )
+
+
 
    <!--Retrieve user recipes-->
             <h3 class="recipes_tile">Latest User recipes</h3>
@@ -38,10 +69,16 @@
                 </div>
             </div>       
          
+
+
+@else
+<div>
+    <h3>Nothing found!</h3>
 </div>
+
+
+
+       @endif   
    
-
-
-
 
 @endsection
