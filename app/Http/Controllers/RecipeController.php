@@ -48,7 +48,7 @@ class RecipeController extends Controller
             'serves' => 'required',
             'ingredients' => 'required|string|min:2|max:10000',
             'preparation' => 'required|string|min:2|max:10000',
-            'image' => 'file|image|max:5000'
+            'image' => 'required|file|image|max:5000'
         );        
         $this->validate($request, $rules);
         
@@ -92,7 +92,10 @@ class RecipeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $recipe = Recipe::find($id);
+        if (Auth::User()->id == $recipe->user_id)
+            return view('editRecipe', ['recipe' => $recipe]);
+        else return redirect()->action('RecipeController@show', $id);
     }
 
     /**
@@ -104,7 +107,39 @@ class RecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = array(
+            'title' => 'required|string|min:2|max:100',
+            'description' => 'string|max:200',
+            'prep' => 'required|string|max:10',
+            'cook' => 'required|string|max:10',
+            'difficulty' => 'required',
+            'serves' => 'required',
+            'ingredients' => 'required|string|min:2|max:10000',
+            'preparation' => 'required|string|min:2|max:10000',
+            'image' => 'file|image|max:5000'
+        );        
+        $this->validate($request, $rules);
+        
+        $recipe = Recipe::find($id);
+        
+        $recipe->title = $request->title;
+        $recipe->user_id = Auth::User()->id;
+        $recipe->description = $request->description;
+        $recipe->prep = $request->prep;
+        $recipe->cook = $request->cook;
+        $recipe->difficulty = $request->difficulty;
+        $recipe->serves = $request->serves;
+        $recipe->ingredients = $request->ingredients;
+        $recipe->preparation = $request->preparation;
+        
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('images', 'public');
+            $recipe->image = $path;
+        }
+        
+        $recipe->save();
+        
+        return redirect()->action('RecipeController@show', $recipe->id);
     }
 
     /**

@@ -54,7 +54,7 @@ Drain marinade from the chicken and vegetables, and discard marinade. Thread chi
  Step 4
 Lightly oil the grill grate. Place the skewers on the grill. Cook for 12 to 15 minutes, until chicken juices run clear. Turn and brush with reserved marinade frequently.'));
         
-        Recipe::create(array('id' => 3, 'title' => 'Bucatini Pasta with Shrimp and Anchovies', 'user_id' => 3, 'description' => 'This pasta dish is both fresh and hearty! The fresh taste of summer from the zucchini and tomatoes contrasts nicely with the earthy saltiness of the anchovies', 'prep' => '10 min', 'cook' => '15 min', 'difficulty' => '', 'serves' => 4, 'ingredients' => '1 pound bucatini pasta
+        Recipe::create(array('id' => 3, 'title' => 'Bucatini Pasta with Shrimp and Anchovies', 'user_id' => 3, 'description' => 'This pasta dish is both fresh and hearty! The fresh taste of summer from the zucchini and tomatoes contrasts nicely with the earthy saltiness of the anchovies', 'prep' => '10 min', 'cook' => '15 min', 'difficulty' => 'MEDIUM', 'serves' => 4, 'ingredients' => '1 pound bucatini pasta
 1 (2 ounce) can anchovy fillets, oil reserved
 1 teaspoon red pepper flakes, or to taste
 3 cloves garlic, minced
