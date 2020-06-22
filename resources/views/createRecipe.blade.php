@@ -1,9 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<<<<<<< HEAD
             <div>
-=======
         <title>CookBook</title>
 
         <!-- Fonts -->
@@ -32,16 +30,12 @@
             @endif
             
             <div style = "text-align: center">
->>>>>>> CreateRecipe
                 <h1>Create Recipe</h1>
             </div>
           
             
-<<<<<<< HEAD
             <div>
-=======
             <div class = "forma flex-center position-ref">
->>>>>>> CreateRecipe
                 <div>
                     {{ Form::open(array('action' => 'RecipeController@store', 'files' => true,)) }}   <!--array('action' => 'RecipeController@store', 'files' => true)-->
                     <div class="form group">
@@ -102,9 +96,6 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> CreateRecipe
 
 @endsection
