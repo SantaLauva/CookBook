@@ -40,6 +40,8 @@
 </div>
 <div class="right">
     <h5>Add to CookBook</h5>
+
+
     @if (Auth::User())
         @if(Auth::User()->id == $recipe->user_id)
             <h5>Edit Recipe</h5>
@@ -48,7 +50,8 @@
             <button type="button" id="delete" onclick="window.location='{{ action('RecipeController@destroy', $recipe->id) }}'">Delete</button>
         @endif
     @endif
-        
+    <h5>Do you want to try this recipe?</h5>
+    <button type="button" id="try" onclick="window.location='{{ action('RecipeController@edit', $recipe) }}'">Want To Try</button>    
     
 </div>
 </div>

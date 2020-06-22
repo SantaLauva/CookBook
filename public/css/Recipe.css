@@ -72,7 +72,7 @@ div.right h5 {
     padding: 10px 20px;
 }
 
-#edit{
+#edit, #delete, #try {
   background-color: white;
   color: black;
   border: 2px solid #555555;
@@ -80,7 +80,8 @@ div.right h5 {
   text-align: center;
   font-size: 16px;
   border-radius: 12px;
-  margin: 4px 60px;
+  margin: 4px auto;
+  width: 100%;
   transition-duration: 0.4s;
 }
 
@@ -89,19 +90,12 @@ div.right h5 {
   color: white;
 }
 
-#delete{
-  background-color: white;
-  color: black;
-  border: 2px solid #555555;
-  padding: 10px 40px;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 12px;
-  margin: 4px 60px;
-  transition-duration: 0.4s;
+#delete:hover {
+  background-color: #DC143C;
+  color: white;
 }
 
-#delete:hover {
-  background-color: #2F4F4F;
-  color: white;
+#try:hover {
+  background-color: #7FFFD4;
+  color: black;
 }
