@@ -23,6 +23,10 @@ class Recipe extends Model
     public function picture() {
         return $this->hasOne('App\Picture');
     }
+    
+    public function tryListUsers() {
+        return $this->hasMany('App\WantToMakeList');
+    }
 
     //added
     public function comments() {

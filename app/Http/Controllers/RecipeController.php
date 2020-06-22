@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
+use App\WantToMakeList;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -156,5 +157,15 @@ class RecipeController extends Controller
             return redirect()->action('RecipeController@index');
         }
         else return redirect()->action('RecipeController@show', $id);
+    }
+    
+    public function addToTryList($id) {
+        
+       // WantToMakeList::create ([
+         //   'user_id' => Auth::User()->wantToMakeList,
+         //   'recipe_id' => $id,
+      //  ]);
+        
+        return view('home');
     }
 }

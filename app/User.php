@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password',
+        'name', 'username', 'email', 'password', 'wantToMakeList'
     ];
 
     /**
@@ -44,10 +44,14 @@ class User extends Authenticatable
         return $this->hasMany('App\Cookbook');
     }
     
-    public function wantToMakeList() {
-        return $this->hasOne('App\WantToMakeList');
+    public function wantToMakeListRecipes() {
+        return $this->hasMany('App\WantToMakeList');
     }
-
+    
+    public function tryLists() {
+        return $this->hasMany('WantToMakeList');
+    }
+            
     //added 
     public function comments() {
         return $this->hasMany('App\Comment');
