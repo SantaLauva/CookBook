@@ -20,40 +20,25 @@
                 </nav>
 
    <!--Retrieve user recipes-->
-   <h3 class="recipes_tile">Latest User recipes</h3>
-   <div class="row">
-   
-                    <div class="com-md-12 d-flex justify-content-center">
-                        <br>
-                        
-                        <br>
-                        <div class="welcome_recipe_gallery">
-
-                            @foreach($allrecipes->reverse() as $recipe)
-                            <div class='recipe'>
-                                <a href="/Recipe/{{ $recipe->id }}">
-                                <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300">
-                                <div class="title">
-                                    <h4>{{ $recipe->title }}</h4>
-                                </div>
-                                </a>
-                                
-
-
-                                </div>
-                            @endforeach
+            <h3 class="recipes_tile">Latest User recipes</h3>
+            <div class="container ">
+            <div class="row">
+                <div class="welcome_recipe_gallery">
+                    @foreach($allrecipes->reverse() as $recipe)
+                        <div class='recipe'>
+                            <a href="/Recipe/{{ $recipe->id }}">
+                            <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300">
+                            <div class="title">
+                                <h4>{{ $recipe->title }}</h4>
                             </div>
-                            </div>
-
+                            </a>
+                        </div>
+                    @endforeach
                     </div>
-
-
                 </div>
-
-                
-            </div>
-        </div>
-
+            </div>       
+         
+</div>
    
 
 
