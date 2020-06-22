@@ -15,6 +15,6 @@ class WantToMakeList extends Model
         return $this->belongsTo('App\User');
     }
     protected $fillable = [
-        'tryList', 'recipe_id',
+        'user_id', 'recipe_id',
     ];
 }

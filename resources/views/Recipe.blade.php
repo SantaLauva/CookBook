@@ -51,8 +51,7 @@
         @endif
     @endif
     <h5>Do you want to try this recipe?</h5>
-    <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">Want To Try</button>    
-    
+    <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">Want To Try</button>        
 </div>
 </div>
 @endsection

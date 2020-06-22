@@ -36,7 +36,7 @@ Route::post('Recipe/{id}/edit', 'RecipeController@update');
 
 Route::get('Recipe/{id}/delete', 'RecipeController@destroy');
 
-Route::post('Recipe/{id}', 'RecipeController@addToTryList');
+Route::get('Recipe/{id}/post', 'RecipeController@addToTryList');
 
 //for searching recipes
 Route::any ( '/search', function () {
