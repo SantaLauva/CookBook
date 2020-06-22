@@ -1,0 +1,65 @@
+
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+#description{
+    width:  auto;
+    height:50px;
+}
+
+
+
+#ingredients{
+    width:  auto;
+    height:50px;
+}
+
+#preparation{
+    width:  auto;
+    height:50px;
+}
+
+body{
+    margin-top: 30px;
+
+    background-image:url(../storage/images/form_background.jpg);
+    height: auto; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    margin-bottom: 30px;
+}
+
+.forma{
+    color: green;
+    font-family: 'Sriracha', cursive, 'Times New Roman', Times, serif;
+}
