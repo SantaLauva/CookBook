@@ -1,21 +1,18 @@
 @extends('layouts.app')
-    <head>
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link href="{{asset ('css/createRecipe.css')}}" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    </head>
-    
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+<link href="{{asset ('css/createRecipe.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 @section('content')
             
     <div style = "text-align: center">
-        <h1>Create Recipe</h1>
+        <h1>Edit Recipe</h1>
     </div>
 
             <div class = "forma flex-center position-ref">
                 <div>
-                    {{ Form::open(array('action' => 'RecipeController@store', 'files' => true,)) }}   <!--array('action' => 'RecipeController@store', 'files' => true)-->
+                    {{ Form::model($recipe, ['action' => ['RecipeController@update', $recipe->id], 'files' => true]) }}
                     <div class="form group">
                         <div class="title">
                             <div>
@@ -61,7 +58,7 @@
                         {{ Form::textarea('preparation') }} 
                     </div>
                    
-                    {!! Form::submit('Create', ['class' => 'btn btn-success']) !!}
+                    {!! Form::submit('Update', ['class' => 'btn btn-success']) !!}
                    
                     {!! Form::close() !!}
                    

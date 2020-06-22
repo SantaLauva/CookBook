@@ -28,3 +28,6 @@ Route::get('Recipe/{id}', 'RecipeController@show');
 
 Route::get('Recipes', 'RecipeController@index');
 Route::get('CookBooks', 'AllCookBooksController@show');
+
+Route::get('Recipe/{id}/edit', 'RecipeController@edit');
+Route::post('Recipe/{id}/edit', 'RecipeController@update');
