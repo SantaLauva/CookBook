@@ -13,6 +13,7 @@ return [
     'CookBooks' => 'Pavārgrāmatas',
     'Remember Me?' => 'Atcerēties mani?',
     'Forgot Your Password?' => 'Vai aizmirsta parole?',
+    'Add Recipe' => 'Pievienot recepti', 
 
  
 ]; 

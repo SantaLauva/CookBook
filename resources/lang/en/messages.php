@@ -13,5 +13,6 @@ return [
     'Recipes' => 'Recipes',
     'CookBooks' => 'CookBooks',
     'Remember Me?' => 'Remember Me?',
+    'Add Recipe' => 'Add Recipe',
  
 ]; 
