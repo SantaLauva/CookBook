@@ -39,26 +39,27 @@
             <pre class="prep" style="white-space: pre-wrap; word-break: keep-all;"> {{ $recipe->preparation }} </pre>
         </div>
     </div>
-    
-    <div class="right">
-    
-        <h5>Add to CookBook</h5>
+    @if (Auth::User())
+        <div class="right">
 
-        @if(Auth::User()->id == $recipe->user_id)
-            <h5>Edit Recipe</h5>
-            <button type="button" id="edit" onclick="window.location='{{ action('RecipeController@edit', $recipe) }}'">Edit</button>
-            <h5>Delete Recipe</h5>
-            <button type="button" id="delete" onclick="window.location='{{ action('RecipeController@destroy', $recipe->id) }}'">Delete</button>
-        @endif
-        
-        @if (session()->has('res'))
-        <h5 id="show"> You want to make this recipe!</h5>
-        
-        @else
-        <h5 id="hide">Do you want to try this recipe?</h5>
-        <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">Want To Try</button>  
-        @endif
-    </div>
+            <h5>Add to CookBook</h5>
+
+            @if(Auth::User()->id == $recipe->user_id)
+                <h5>Edit Recipe</h5>
+                <button type="button" id="edit" onclick="window.location='{{ action('RecipeController@edit', $recipe) }}'">Edit</button>
+                <h5>Delete Recipe</h5>
+                <button type="button" id="delete" onclick="window.location='{{ action('RecipeController@destroy', $recipe->id) }}'">Delete</button>
+            @endif
+
+            @if (session()->has('res'))
+            <h5 id="show"> You want to make this recipe!</h5>
+
+            @else
+            <h5 id="hide">Do you want to try this recipe?</h5>
+            <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">Want To Try</button>  
+            @endif
+        </div>
+    @endif
 </div>
 
 
