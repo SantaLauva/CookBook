@@ -99,3 +99,13 @@ div.right h5 {
   background-color: #7FFFD4;
   color: black;
 }
+
+div.comments{
+    width: 70%;
+    margin: 40px 70px;
+}
+
+textarea {
+    height: 120px;
+    width: 400px;
+}

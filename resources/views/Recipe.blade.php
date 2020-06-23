@@ -45,6 +45,12 @@
         <div class="right">
 
             <h5>Add to CookBook</h5>
+            <select name="list">
+                <option value="">Select CookBook</option>
+                @foreach(session()->get('lists') as $L)
+                <option value="{{ $L->title }}">{{ $L->title }}</option>
+                @endforeach
+            </select>
 
             @if(Auth::User()->id == $recipe->user_id)
                 <h5>Edit Recipe</h5>
@@ -67,42 +73,41 @@
 <!-- Prieks komentariem -->
 
 
-<div class="container">
-<span>{{$recipe->comments->count()}} {{str_plural('comment', $recipe->comments->count()) }}</span>
-	
-<h3>{{ __('messages.Comments') }}</h3>
-@if (Auth::check())
-  
-  {{ Form::open(array('action' => 'CommentController@store')) }}
-  <div>   
+<div class="comments">
+    <h3>{{ __('messages.Comments') }}</h3>  
     
-    {{ Form::textarea('message') }}
-    {{ Form::hidden('recipe_id', $recipe->id) }}
+    @if (Auth::check())
+        <h5>{{ __('messages.Write your comment: ') }}</h5>
+        
+        {{ Form::open(array('action' => 'CommentController@store')) }}
+        <div>   
+            {{ Form::textarea('message') }}
+            {{ Form::hidden('recipe_id', $recipe->id) }}  
+        </div>
+        <br>
+        {!! Form::submit(__('messages.Comment'), ['class' => 'btn btn-success']) !!}
+        {!! Form::close() !!}
+        
+        <div>
+            <ul>
+            @foreach ($errors->all() as $error)
+            <li> {{ $error }} </li>
+            @endforeach
+            </ul>
+        </div>
+    @endif
     
-</div>
-<br>
-  {!! Form::submit(__('messages.Comment'), ['class' => 'btn btn-success']) !!}
-{!! Form::close() !!}
-<br>
-<div>
-    <ul>
-    @foreach ($errors->all() as $error)
-    <li> {{ $error }} </li>
+    <span>{{$recipe->comments->count()}} {{str_plural('comment', $recipe->comments->count()) }}</span>
+    <br><hr>
+    
+    @foreach ($recipe->comments->reverse() as $comment)
+    <div class="coment">
+        <pre>by: {{ $comment->user->username }}      at: {{$comment->created_at}}</pre>
+        <p>{{ $comment->message }}</p>
+        <hr>
+    </div>
     @endforeach
-    </ul>
 </div>
 
-@endif
-@forelse ($recipe->comments->reverse() as $comment)
-  <p>{{ $comment->user->user_id }} {{$comment->created_at}}</p>
-  <p>{{ $comment->message }}</p>
-  <hr>
-@empty
-  <p>{{ __('messages.This post has no comments') }}</p>
-@endforelse
-
-
-    
-</div>
 @endsection
 

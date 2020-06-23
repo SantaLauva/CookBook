@@ -20,6 +20,6 @@ return [
     'This post has no comments' => 'Receptei vēl nav komentāru',
     'Comment' => 'Komentēt',
     'Latest User recipes' => 'Jaunākās lietotāju receptes',
-
+    'Write your comment: ' => 'Ieraksti savu komentāru: ',
  
 ]; 
