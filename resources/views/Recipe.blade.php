@@ -1,6 +1,8 @@
 @extends('layouts.app')
+
 <link href="{{asset ('css/Recipe.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 
 @section('content')
 <div class="inline">
@@ -59,7 +61,29 @@
 
 
 <!-- Prieks komentariem -->
-<div class="Comments">
+
+
+<div class="container">
+<span>{{$recipe->comments->count()}} {{str_plural('comment', $recipe->comments->count()) }}</span>
+	
+<h3>{{ __('messages.Comments') }}</h3>
+@if (Auth::check())
+  
+  {{ Form::open(['route' => ['comments.store'], 'method' => 'POST']) }}
+  <p>{{ Form::textarea('body', old('body')) }}</p>
+  {{ Form::hidden('recipe_id', $recipe->id) }}
+  <p>{{ Form::submit('Send') }}</p>
+{{ Form::close() }}
+@endif
+@forelse ($recipe->comments as $comment)
+  <p>{{ $comment->user->user_id }} {{$comment->created_at}}</p>
+  <p>{{ $comment->message }}</p>
+  <hr>
+@empty
+  <p>{{ __('messages.This post has no comments') }}</p>
+@endforelse
+
+
     
 </div>
 @endsection

@@ -28,7 +28,7 @@ class Recipe extends Model
         return $this->hasMany('App\WantToMakeList');
     }
 
-    //added
+    //added relationship for comments
     public function comments() {
         return $this->hasMany('App\Comment');
     }

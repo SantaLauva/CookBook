@@ -16,6 +16,8 @@ return [
     'Add Recipe' => 'Pievienot recepti', 
     'Account' => 'Mans profils',
     'CookBook' => 'Pavārgrāmata',
+    'Comments' => 'Receptes komentāri',
+    'This post has no comments' => 'Receptei vēl nav komentāru',
 
  
 ]; 

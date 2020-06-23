@@ -16,5 +16,7 @@ return [
     'Add Recipe' => 'Add Recipe',
     'Account' => 'Account',
     'CookBook' => 'CookBook',
+    'Comments' => 'Comments',
+    'This post has no comments' => 'This post has no comments',
  
 ]; 
