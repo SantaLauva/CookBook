@@ -47,3 +47,8 @@ Route::any ( '/search', function () {
     else
         return view ( 'welcome', ['allrecipes' =>  $return_recipe]);
 } );
+
+
+//for languange controller
+
+Route::get('lang/{locale}','LanguageController');
