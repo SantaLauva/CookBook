@@ -1,4 +1,4 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
         <link href="{{asset ('css/welcomePage.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -9,7 +9,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    CookBook
+                    {{ __('messages.CookBook') }}
                 </div>
 
 <!--new search bar-->
