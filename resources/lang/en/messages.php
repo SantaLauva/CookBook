@@ -21,5 +21,19 @@ return [
     'Comment' => 'Comment',
     'Latest User recipes' => 'Latest User recipes',
     'Forgot Your Password?' => 'Forgot Your Password?',
+    'Create' => 'Create',
+    'Preparation' => 'Preparation',
+    'Ingredients' => 'Ingredients',
+    'Difficulty' => 'Difficulty',
+    'Cooking Time' => 'Cooking Time',
+    'Preparation Time' => 'Preparation Time',
+    'Description' => 'Description',
+    'Picture' => 'Picture',
+    'Title' => 'Title',
+    'Easy' => 'Easy',
+    'Medium' => 'Medium',
+    'Hard'=> 'Hard',
+    'Create Recipe' => 'Create Recipe',
+
  
 ]; 
