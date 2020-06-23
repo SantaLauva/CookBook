@@ -50,7 +50,7 @@
                         {{ Form::select('difficulty', array('Easy' => __('messages.Easy'), 'Medium' => __('messages.Medium'), 'Hard' => __('messages.Hard')) )}}
                     </div>
                     <div>
-                        {{ Form::label('serves', 'Serves') }}
+                        {{ Form::label('serves', __('messages.Serves')) }}
                         {{ Form::text('serves') }}
                     </div>
                     <div>   

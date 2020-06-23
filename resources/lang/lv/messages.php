@@ -20,9 +20,7 @@ return [
     'This post has no comments' => 'Receptei vēl nav komentāru',
     'Comment' => 'Komentēt',
     'Latest User recipes' => 'Jaunākās lietotāju receptes',
-<<<<<<< HEAD
     'Write your comment: ' => 'Ieraksti savu komentāru: ',
-=======
     'Create' => 'Veidot',
     'Preparation' => 'Pagatovošana',
     'Ingredients' => 'Sastāvdaļas',
@@ -36,10 +34,6 @@ return [
     'Medium' => 'Vidēji',
     'Hard' => 'Grūti',
     'Create Recipe' => 'Izveidot recepti',
-    
-
-
-
->>>>>>> 58156cb2d05cb647a5ec785b14df001609b703c8
+    'Serves' => 'Porcijas',
  
 ]; 

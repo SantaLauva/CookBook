@@ -47,6 +47,7 @@
             <h5>Add to CookBook</h5>
             <select name="list">
                 <option value="">Select CookBook</option>
+                <option value="new">Create new CookBook</option>
                 @foreach(session()->get('lists') as $L)
                 <option value="{{ $L->title }}">{{ $L->title }}</option>
                 @endforeach
