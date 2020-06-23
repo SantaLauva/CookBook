@@ -26,8 +26,7 @@ class RecipeTableSeeder extends Seeder
 1/4 teaspoon ground black pepper
 1/8 teaspoon dried thyme
 3/4 skinless, boneless chicken breasts, or as needed, cut into 1-inch pieces
-2 bamboo skewers, or as needed, soaked in water for 30 minutes', 'preparation' => '
- Step 1
+2 bamboo skewers, or as needed, soaked in water for 30 minutes', 'preparation' => ' Step 1
 Whisk lemon juice, oil, vinegar, onion flakes, garlic, lemon zest, Greek seasoning, poultry seasoning, oregano, pepper, and thyme together in a bowl and pour into a resealable plastic bag.
  Step 2
 Add chicken, coat with the marinade, squeeze out excess air, and seal the bag. Marinate in the refrigerator for at least 2 hours.
@@ -44,8 +43,7 @@ Remove chicken from the marinade and shake off excess; thread onto skewers. Disc
 2 cloves garlic
 5 small onions, cut into 2 inch pieces
 2 red bell peppers, cut into 2 inch pieces
-12 eaches skewers', 'preparation' => '
- Step 1
+12 eaches skewers', 'preparation' => ' Step 1
 In a large bowl, whisk together oil, honey, soy sauce, and pepper. Before adding chicken, reserve a small amount of marinade to brush onto kabobs while cooking. Place the chicken, garlic, onions and peppers in the bowl, and marinate in the refrigerator at least 2 hours (the longer the better).
  Step 2
 Preheat the grill for high heat.
@@ -62,8 +60,7 @@ Lightly oil the grill grate. Place the skewers on the grill. Cook for 12 to 15 m
 1 pint grape tomatoes
 2 teaspoons dried oregano
 2 teaspoons dried basil
-1 pound peeled and deveined medium shrimp', 'preparation' => '
- Step 1
+1 pound peeled and deveined medium shrimp', 'preparation' => ' Step 1
 Bring a large pot of lightly salted water to a boil. Add pasta and cook for 8 to 10 minutes or until al dente; drain.
  Step 2
 Meanwhile, stir together the anchovies and their oil with the red pepper flakes and garlic in a large skillet over medium heat, breaking up the anchovies as you stir. Once the garlic begins to sizzle, add the sliced zucchini, and cook until it begins to soften, about 3 minutes. Stir in the grape tomatoes, and continue cooking until the zucchini is tender, and the skins of the tomatoes begin to pop, 5 minutes more.
@@ -88,8 +85,7 @@ Red Slaw:
 3 tablespoons olive oil
 3 tablespoons white vinegar
 1 small bunch cilantro, chopped
-20 (8 inch) corn tortillas', 'preparation' => '
- Step 1
+20 (8 inch) corn tortillas', 'preparation' => ' Step 1
 Mix lime juice, olive oil, chili powder, and mayonnaise together in a bowl. Add shrimp and marinade for at least 1 hour.
  Step 2
 Mix enchilada sauce, jalapenos, honey, lime juice, and salt together in a separate bowl for the sauce.
@@ -114,8 +110,7 @@ Remove shrimp from marinade. Grill until opaque, about 5 minutes. Add shrimp to 
 12 strips bacon, sliced crosswise into 1/2-inch pieces
 1 quart vegetable oil for deep frying
 ¼ cup maple syrup, for serving
-¼ teaspoon salt', 'preparation' => '
- Step 1
+¼ teaspoon salt', 'preparation' => ' Step 1
 Pour 1 cup plus 2 tablespoons cold water into a saucepan over medium-high heat. Add butter, sugar, salt and nutmeg. When mixture starts to simmer, reduce heat to medium and add flour. Cook, stirring constantly, until mixture comes together into a soft dough ball, about 2 minutes. Remove from heat and transfer to a mixing bowl. Pour in vanilla extract. Break up dough with a whisk or fork, and let cool for about 5 minutes.
  Step 2
 Break an egg into the bowl with the dough and whisk until egg is incorporated and dough becomes smooth and sticky, 4 to 5 minutes. Dough will stick inside the whisk; clean out dough with a spatula before adding successive eggs, 1 at a time. Whisk in each egg until thoroughly incorporated into the dough. Clear dough from whisk; scrape down sides of bowl. Cover dough with plastic wrap and chill for about an hour.
@@ -141,8 +136,7 @@ Serve hot, drizzled with maple syrup and topped with bacon pieces.'));
 2 large eggs
 2 tablespoons melted butter
 1 teaspoon lemon extract
-1 serving cooking spray', 'preparation' => '
- Step 1
+1 serving cooking spray', 'preparation' => ' Step 1
 Preheat a waffle iron according to manufacturer\'s instructions.
  Step 2
 Whisk flour, cornmeal, sugar, baking powder, baking soda, and salt together in a large mixing bowl.
@@ -175,8 +169,7 @@ Burgers:
 2 pounds ground beef
 9 ounces crumbled goat cheese (chevre)
 12 slices heirloom tomatoes
-3 cups arugula', 'preparation' => '
- Step 1
+3 cups arugula', 'preparation' => ' Step 1
 Combine sea salt, porcini mushrooms, thyme, garlic powder, 1 teaspoon black pepper, and red pepper flakes in a food processor; blend until thoroughly mixed. Pour seasoning mixture into a bowl.
  Step 2
 Combine egg yolks, lemon juice, garlic, and dill in the food processor; blend, pouring in canola oil and olive oil in a steady stream until aioli is thick and smooth.
@@ -199,8 +192,7 @@ Place 1 cooked patty on the bottom of each toasted bun. Top each with 3 tablespo
 3 tablespoons evaporated milk
 2 tablespoons Worcestershire sauce
 ⅛ teaspoon cayenne pepper
-2 cloves garlic, minced', 'preparation' => '
- Step 1
+2 cloves garlic, minced', 'preparation' => ' Step 1
 Preheat grill for high heat.
  Step 2
 In a large bowl, mix the ground beef, egg, bread crumbs, evaporated milk, Worcestershire sauce, cayenne pepper, and garlic using your hands. Form the mixture into 8 hamburger patties.
@@ -223,8 +215,7 @@ Lightly oil the grill grate. Grill patties 5 minutes per side, or until well don
 2 tomato, cut into wedges
 2 carrot, grated
 8 thin slices red onion
-1/4 cup and 2 tablespoons toasted sesame seeds', 'preparation' => '
- Step 1
+1/4 cup and 2 tablespoons toasted sesame seeds', 'preparation' => ' Step 1
 Season both side of the rib eye steak with soy sauce and steak seasoning. Cover and refrigerate at least 1 hour to overnight.
  Step 2
 Preheat an outdoor grill for medium-high heat and lightly oil the grate.

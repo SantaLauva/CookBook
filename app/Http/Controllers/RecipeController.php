@@ -161,11 +161,14 @@ class RecipeController extends Controller
     
     public function addToTryList($id) {
         
-        WantToMakeList::create ([
-            'user_id' => Auth::User()->id,
-            'recipe_id' => $id,
-        ]);
-        
+        $p = WantToMakeList::where('recipe_id', '=', $id)->where('user_id', '=', Auth::User()->id)->get();
+        if (count($p) == 0) {
+            WantToMakeList::create ([
+                'user_id' => Auth::User()->id,
+                'recipe_id' => $id,
+            ]);
+        }
         return redirect()->action('RecipeController@show', $id);
     }
+
 }
