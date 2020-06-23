@@ -33,9 +33,9 @@
     </div>
     <div class="preparation">
         <h5>Ingredients: </h5>
-        <div class="ingredients"> {{ $recipe->ingredients }} </div>
+        <pre class="ingredients" style="white-space: pre-wrap; word-break: keep-all;"> {{ $recipe->ingredients }} </pre>
         <h5>Preparation: </h5>
-        <div class="prep"> {{ $recipe->preparation }} </div>
+        <pre class="prep" style="white-space: pre-wrap; word-break: keep-all;"> {{ $recipe->preparation }} </pre>
     </div>
 </div>
 <div class="right">
@@ -53,6 +53,14 @@
     <h5>Do you want to try this recipe?</h5>
     <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">Want To Try</button>        
 </div>
+</div>
+
+
+
+
+<!-- Prieks komentariem -->
+<div class="Comments">
+    
 </div>
 @endsection
 
