@@ -11,7 +11,7 @@
 @section('content')
             
     <div style = "text-align: center">
-        <h1>Create Recipe</h1>
+        <h1>{{__('messages.Create Recipe')}}</h1>
     </div>
 
             <div class = "forma flex-center position-ref">
@@ -20,49 +20,49 @@
                     <div class="form group">
                         <div class="title">
                             <div>
-                                {{ Form::label('title', 'Title') }}
+                                {{ Form::label('title', __('messages.Title')) }}
                                 {{ Form::text('title') }} 
                             </div>
                         </div>
                     </div>
                     <div class="form group">
                         <div>
-                            {{ Form::label('image', 'Picture') }}
+                            {{ Form::label('image', __('messages.Picture')) }}
                             {{ Form::file('image',['class' => 'btn btn-default']) }}
                         </div>
                     </div>
                     <div class="description">
                         <div>  
-                            {{ Form::label('description', 'Description') }}
+                            {{ Form::label('description', __('messages.Description')) }}
                             {{ Form::textarea('description') }} 
                         </div>
                     </div>
                     <div>
-                        {{ Form::label('prep', 'Preparation Time') }}
+                        {{ Form::label('prep', __('messages.Preparation Time')) }}
                         {{ Form::text('prep') }} 
                     </div>
                     <div>
-                        {{ Form::label('cook', 'Cooking Time') }}
+                        {{ Form::label('cook', __('messages.Cooking Time')) }}
                         {{ Form::text('cook') }} 
                     </div>
                     <div>
-                        {{ Form::label('difficulty', 'Difficulty') }}
-                        {{ Form::select('difficulty', array('Easy' => 'Easy', 'Medium' => 'Medium', 'Hard' => 'Hard')) }}
+                        {{ Form::label('difficulty', __('messages.Difficulty')) }}
+                        {{ Form::select('difficulty', array('Easy' => __('messages.Easy'), 'Medium' => __('messages.Medium'), 'Hard' => __('messages.Hard')) )}}
                     </div>
                     <div>
                         {{ Form::label('serves', 'Serves') }}
                         {{ Form::text('serves') }}
                     </div>
                     <div>   
-                        {{ Form::label('ingredients', 'Ingredients') }}
+                        {{ Form::label('ingredients', __('messages.Ingredients')) }}
                         {{ Form::textarea('ingredients') }} 
                     </div>
                     <div>
-                        {{ Form::label('preparation', 'Preparation') }}
+                        {{ Form::label('preparation', __('messages.Preparation')) }}
                         {{ Form::textarea('preparation') }} 
                     </div>
                    
-                    {!! Form::submit('Create', ['class' => 'btn btn-success']) !!}
+                    {!! Form::submit(__('messages.Create'), ['class' => 'btn btn-success']) !!}
                    
                     {!! Form::close() !!}
                    
