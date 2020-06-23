@@ -74,11 +74,23 @@
 <h3>{{ __('messages.Comments') }}</h3>
 @if (Auth::check())
   
-  {{ Form::open(['route' => ['comments.store'], 'method' => 'POST']) }}
-  <p>{{ Form::textarea('body', old('body')) }}</p>
-  {{ Form::hidden('recipe_id', $recipe->id) }}
-  <p>{{ Form::submit('Send') }}</p>
-{{ Form::close() }}
+  {{ Form::open(array('action' => 'CommentController@store')) }}
+  <div>   
+    {{ Form::label('message', 'Comment') }}
+    {{ Form::textarea('message') }}
+    {{ Form::hidden('recipe_id', $recipe->id) }}
+    
+</div>
+  {!! Form::submit('Comment', ['class' => 'btn btn-success']) !!}
+    {!! Form::close() !!}
+<div>
+    <ul>
+    @foreach ($errors->all() as $error)
+    <li> {{ $error }} </li>
+    @endforeach
+    </ul>
+</div>
+
 @endif
 @forelse ($recipe->comments as $comment)
   <p>{{ $comment->user->user_id }} {{$comment->created_at}}</p>
