@@ -16,13 +16,13 @@ class CommentsController extends Controller
  
     public function store(CommentRequest $request)
     {
-        $post = Recipe::findOrFail($request->recipe_id);
+        $recipes = Recipe::findOrFail($request->recipe_id);
  
         Comment::create([
             'message' => $request->message,
-            'user_id' => Auth::id(),
-            'recipe_id' => $post->id
+            'user_id' => Auth::User()->id,
+            'recipe_id' => $id
         ]);
-        return redirect()->route('posts.show', $post->id);
+        return redirect()->route('recipes.show', $recipes->id);
     }
 }

@@ -55,6 +55,6 @@ Route::get('lang/{locale}','LanguageController');
 
 
 //for user comments
-Route::get('/Recipe/{id}', 'RecipeController@show')->name('posts.show');
+Route::get('/Recipe/{id}', 'RecipeController@show')->name('recipes.show');
 
 Route::resource('comments', 'CommentsController');
