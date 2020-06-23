@@ -52,7 +52,7 @@ class User extends Authenticatable
         return $this->hasMany('WantToMakeList');
     }
             
-    //added 
+    //added relationship for comments
     public function comments() {
         return $this->hasMany('App\Comment');
     }

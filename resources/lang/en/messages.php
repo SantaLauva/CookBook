@@ -16,5 +16,10 @@ return [
     'Add Recipe' => 'Add Recipe',
     'Account' => 'Account',
     'CookBook' => 'CookBook',
+    'Comments' => 'Comments',
+    'This post has no comments' => 'This post has no comments',
+    'Comment' => 'Comment',
+    'Latest User recipes' => 'Latest User recipes',
+    'Forgot Your Password?' => 'Forgot Your Password?',
  
 ]; 

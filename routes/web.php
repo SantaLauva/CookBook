@@ -52,3 +52,7 @@ Route::any ( '/search', function () {
 //for languange controller
 
 Route::get('lang/{locale}','LanguageController');
+
+
+//for user comments
+Route::post('Recipe/comment', 'CommentController@store');
