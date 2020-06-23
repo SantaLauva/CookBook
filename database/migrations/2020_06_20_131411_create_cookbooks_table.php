@@ -17,7 +17,6 @@ class CreateCookbooksTable extends Migration
             $table->id();
             $table->string('title', 100);
             $table->foreignID('user_id')->constrained();
-            $table->foreignID('recipe_id')->constrained();
             $table->string('description', 200);
             $table->timestamps();
         });

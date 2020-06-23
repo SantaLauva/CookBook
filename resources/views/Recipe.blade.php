@@ -52,11 +52,10 @@
             @endif
 
             @if (session()->has('res'))
-            <h5 id="show"> You want to make this recipe!</h5>
-
+                <h5 id="show"> You want to make this recipe!</h5>
             @else
-            <h5 id="hide">Do you want to try this recipe?</h5>
-            <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">Want To Try</button>  
+                <h5 id="hide">Do you want to try this recipe?</h5>
+                <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">Want To Try</button>  
             @endif
         </div>
     @endif
