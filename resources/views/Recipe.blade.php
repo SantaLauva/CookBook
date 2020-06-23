@@ -76,13 +76,15 @@
   
   {{ Form::open(array('action' => 'CommentController@store')) }}
   <div>   
-    {{ Form::label('message', 'Comment') }}
+    
     {{ Form::textarea('message') }}
     {{ Form::hidden('recipe_id', $recipe->id) }}
     
 </div>
-  {!! Form::submit('Comment', ['class' => 'btn btn-success']) !!}
-    {!! Form::close() !!}
+<br>
+  {!! Form::submit(__('messages.Comment'), ['class' => 'btn btn-success']) !!}
+{!! Form::close() !!}
+<br>
 <div>
     <ul>
     @foreach ($errors->all() as $error)
@@ -92,7 +94,7 @@
 </div>
 
 @endif
-@forelse ($recipe->comments as $comment)
+@forelse ($recipe->comments->reverse() as $comment)
   <p>{{ $comment->user->user_id }} {{$comment->created_at}}</p>
   <p>{{ $comment->message }}</p>
   <hr>

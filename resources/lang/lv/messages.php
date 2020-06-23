@@ -18,6 +18,8 @@ return [
     'CookBook' => 'Pavārgrāmata',
     'Comments' => 'Receptes komentāri',
     'This post has no comments' => 'Receptei vēl nav komentāru',
+    'Comment' => 'Komentēt',
+    'Latest User recipes' => 'Jaunākās lietotāju receptes',
 
  
 ]; 

@@ -51,7 +51,7 @@
 
 
    <!--Retrieve user recipes-->
-            <h3 class="recipes_tile">Latest User recipes</h3>
+            <h3 class="recipes_tile">{{__('messages.Latest User recipes')}}</h3>
             <div class="container ">
             <div class="row">
                 <div class="welcome_recipe_gallery">
