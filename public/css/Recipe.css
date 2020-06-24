@@ -105,7 +105,11 @@ div.comments{
     margin: 40px 70px;
 }
 
-textarea {
+.comments textarea {
     height: 120px;
     width: 400px;
+}
+
+#createNew textarea {
+    width: 200px;
 }

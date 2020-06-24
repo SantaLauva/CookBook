@@ -44,7 +44,7 @@ class RecipeController extends Controller
     {
         $rules = array(
             'title' => 'required|string|min:2|max:100',
-            'description' => 'string|max:200',
+            'description' => 'max:200',
             'prep' => 'required|string|max:10',
             'cook' => 'required|string|max:10',
             'difficulty' => 'required',

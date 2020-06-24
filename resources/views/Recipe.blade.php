@@ -45,13 +45,27 @@
         <div class="right">
 
             <h5>Add to CookBook</h5>
-            <select name="list">
+            <select id="list" onchange="myfunction()">
                 <option value="">Select CookBook</option>
                 <option value="new">Create new CookBook</option>
                 @if (session()->has('lists')) @foreach(session()->get('lists') as $L)
                 <option value="{{ $L->title }}">{{ $L->title }}</option>
                 @endforeach @endif
-            </select>
+            </select><br>
+            
+            <div id="createNew" style="display: none;">
+                {{ Form::open() }}
+                <div>   
+                    {{ Form::label('title', __('messages.Title')) }}
+                    {{ Form::text('title') }}   
+                </div><div style="width: 50%;">  
+                    {{ Form::label('description', __('messages.Description')) }}
+                    {{ Form::textarea('description') }} 
+                </div>
+                <br>
+                {!! Form::submit(__('messages.Create'), ['class' => 'btn btn-success listbutton']) !!}
+                {!! Form::close() !!}
+            </div>
 
             @if(Auth::User()->id == $recipe->user_id)
                 <h5>Edit Recipe</h5>
@@ -112,3 +126,37 @@
 
 @endsection
 
+<script type="text/javascript">
+    function myfunction() {
+        var z = document.getElementById("list").value;
+        if (z == "new") {
+            document.getElementById("createNew").style.display = "block";
+        }
+        else document.getElementById("createNew").style.display = "none";
+    }
+
+     $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $(".listbutton").click(function(e){
+        var data = $(this).serialize();
+        var url = '{{ action('AllCookBooksController@store', $recipe->id) }}';
+
+        $.ajax({
+           url:url,
+           method:'POST',
+           data:data,
+           
+           success: function(){
+                  alert("beidzot");
+
+           },
+           error: function(error){
+              console.log(error);
+           }
+        });
+    });
+</script>
