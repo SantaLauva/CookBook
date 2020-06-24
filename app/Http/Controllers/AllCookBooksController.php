@@ -16,7 +16,7 @@ class AllCookBooksController extends Controller
      */
     public function index()
     {
-        return view('AllCookBooks');
+        return view('AllCookBooks', ['allCookBooks' => Cookbook::all()]);
     }
 
     /**
@@ -78,9 +78,11 @@ class AllCookBooksController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show()
+    public function show($id)
     {
-        
+        $title = Cookbook::where('id', '=', $id)->take(1)->get('title');
+        return view('CookBook', ['allrecipes' => RecipeInCookBook::where('cookbook_id', '=', $id)->get(),
+            'title' => $title[0]->title]);
     }
 
     /**

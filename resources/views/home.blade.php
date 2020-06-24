@@ -7,10 +7,27 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Your CookBooks</div>
-
-                <div class="card-body">
-                    Here will be listed your CookBooks
+                
+                <div class="recipegallery">
+                    @foreach ($cookbooks as $cookbook)               
+                        <div class='recipe' style="height: 130px; width: 180px;">
+                            <a href="/CookBook/{{ $cookbook->id }}">
+                                <div class='cont' style="height: 130px; width: 180px; text-align: center; margin: 20px 0px;">
+                                    <h4>{{ $cookbook->title }}</h4>
+                                    <p>{{ $cookbook->description }}</p>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
+                
+                @if (count($cookbooks) == 0) 
+                <div class="card-body">
+                    You don't have any CookBook...
+                </div>
+                @endif
+                
+                <div class="link"><a href="/Try">More</a></div>
                 
             </div> <br>
             

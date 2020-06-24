@@ -33,6 +33,7 @@ Route::post('Recipe/{id}/add', 'AllCookBooksController@storeRecipe');
 
 Route::get('Recipes', 'RecipeController@index');
 Route::get('CookBooks', 'AllCookBooksController@index');
+Route::get('CookBook/{id}', 'AllCookBooksController@show');
 
 Route::get('Recipe/{id}/edit', 'RecipeController@edit');
 Route::post('Recipe/{id}/edit', 'RecipeController@update');
