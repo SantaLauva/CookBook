@@ -3,8 +3,49 @@
 <link href="{{asset ('css/Recipe.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-
 @section('content')
+<script type="application/javascript">
+    function myfunction() {
+        var z = document.getElementById("list").value;
+        if (z == "new") {
+            document.getElementById("createNew").style.display = "block";
+            document.getElementById("addToList").style.display = "none";
+        }
+        else if (z != "") {
+            document.getElementById("createNew").style.display = "none";
+            document.getElementById("addToList").style.display = "block";
+        }
+        else {
+            document.getElementById("createNew").style.display = "none";
+            document.getElementById("addToList").style.display = "none";
+        }
+    }
+     
+
+    $(".newlistbutton").click(function(e){
+        $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+    
+        var data = $(this).serialize();
+        var url = '{{ action('AllCookBooksController@store', $recipe->id) }}';
+
+        $.ajax({
+           url:url,
+           method:'POST',
+           data:data,
+           
+           success: function(result){
+                  alert("beidzot");
+
+           },
+        });
+    });
+    
+</script>
+
 <div class="inline">
     <div class="left">
         <div class="main">
@@ -49,7 +90,7 @@
                 <option value="">Select CookBook</option>
                 <option value="new">Create new CookBook</option>
                 @if (session()->has('lists')) @foreach(session()->get('lists') as $L)
-                <option value="{{ $L->title }}">{{ $L->title }}</option>
+                <option value="{{ $L->id }}">{{ $L->title }}</option>
                 @endforeach @endif
             </select><br>
             
@@ -63,8 +104,13 @@
                     {{ Form::textarea('description') }} 
                 </div>
                 <br>
-                {!! Form::submit(__('messages.Create'), ['class' => 'btn btn-success listbutton']) !!}
+                {!! Form::submit(__('messages.Create'), ['class' => 'btn btn-success newlistbutton']) !!}
                 {!! Form::close() !!}
+            </div>
+            
+            <div id="addToList" style="display: none;">
+                <br>
+                <button type="button" id="buttonaddToList" onclick="window.location='{{ action('AllCookBooksController@storeRecipe', $recipe->id) }}'" class='btn btn-success'>Add</button>
             </div>
 
             @if(Auth::User()->id == $recipe->user_id)
@@ -126,37 +172,3 @@
 
 @endsection
 
-<script type="text/javascript">
-    function myfunction() {
-        var z = document.getElementById("list").value;
-        if (z == "new") {
-            document.getElementById("createNew").style.display = "block";
-        }
-        else document.getElementById("createNew").style.display = "none";
-    }
-
-     $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    $(".listbutton").click(function(e){
-        var data = $(this).serialize();
-        var url = '{{ action('AllCookBooksController@store', $recipe->id) }}';
-
-        $.ajax({
-           url:url,
-           method:'POST',
-           data:data,
-           
-           success: function(){
-                  alert("beidzot");
-
-           },
-           error: function(error){
-              console.log(error);
-           }
-        });
-    });
-</script>

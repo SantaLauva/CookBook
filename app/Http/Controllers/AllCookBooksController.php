@@ -55,8 +55,17 @@ class AllCookBooksController extends Controller
         ]);
         
         return response([
-                'message' => 'Data inserted successfully'
+                'message' => 'Data inserted successfully',
         ]);
+    }
+    
+    public function storeRecipe(Request $request, $id) {
+        RecipeInCookBook::create([
+            'recipe_id' => $id,
+            'cookbook_id' => $request->id
+        ]);
+        
+        return redirect()->action('RecipeController@show', $id);
     }
 
     /**
