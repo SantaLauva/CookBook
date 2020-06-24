@@ -60,12 +60,16 @@ class AllCookBooksController extends Controller
     }
     
     public function storeRecipe(Request $request, $id) {
-        RecipeInCookBook::create([
+        echo $request->list;
+        $p = RecipeInCookBook::where('recipe_id', '=', $id)->where('cookbook_id', '=', $request->list)->get();
+        if (count($p) == 0) {
+            RecipeInCookBook::create([
             'recipe_id' => $id,
-            'cookbook_id' => $request->id
-        ]);
-        
+            'cookbook_id' => $request->list
+            ]);
+        }
         return redirect()->action('RecipeController@show', $id);
+        
     }
 
     /**

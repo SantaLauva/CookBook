@@ -86,13 +86,18 @@
         <div class="right">
 
             <h5>Add to CookBook</h5>
-            <select id="list" onchange="myfunction()">
+            {{ Form::open(array('url' => 'Recipe/'.$recipe->id.'/add')) }}
+            <select id="list" name="list" onchange="myfunction()">
                 <option value="">Select CookBook</option>
                 <option value="new">Create new CookBook</option>
                 @if (session()->has('lists')) @foreach(session()->get('lists') as $L)
                 <option value="{{ $L->id }}">{{ $L->title }}</option>
                 @endforeach @endif
             </select><br>
+            <div id="addToList" style="display: none;"><br>    
+            {!! Form::submit(__('messages.Add'), ['class' => 'btn btn-success']) !!}
+            </div>
+            {!! Form::close() !!}
             
             <div id="createNew" style="display: none;">
                 {{ Form::open() }}
@@ -106,12 +111,7 @@
                 <br>
                 {!! Form::submit(__('messages.Create'), ['class' => 'btn btn-success newlistbutton']) !!}
                 {!! Form::close() !!}
-            </div>
-            
-            <div id="addToList" style="display: none;">
-                <br>
-                <button type="button" id="buttonaddToList" onclick="window.location='{{ action('AllCookBooksController@storeRecipe', $recipe->id) }}'" class='btn btn-success'>Add</button>
-            </div>
+            </div>       
 
             @if(Auth::User()->id == $recipe->user_id)
                 <h5>Edit Recipe</h5>
