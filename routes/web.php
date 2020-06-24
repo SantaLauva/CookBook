@@ -38,6 +38,8 @@ Route::get('Recipe/{id}/delete', 'RecipeController@destroy');
 
 Route::get('Recipe/{id}/post', 'RecipeController@addToTryList');
 
+Route::get('/Try', 'HomeController@showTryList');
+
 //for searching recipes
 Route::any ( '/search', function () {
     $q = Request::get ( 'q' );

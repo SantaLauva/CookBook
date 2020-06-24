@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Recipe;
+use App\WantToMakeList;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Facades\Auth;
-use function redirect;
-use function view;
 
 class HomeController extends Controller
 {
@@ -26,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home', ['recipes' => 
+            Recipe::whereIn('id', WantToMakeList::where('user_id', '=', Auth::User()->id)->pluck('recipe_id'))->take(3)->get()]);
+    }
+    
+    public function showTryList() {
+        return view('TryList', ['allrecipes' => Recipe::whereIn('id', WantToMakeList::where('user_id', '=', Auth::User()->id)->pluck('recipe_id'))->get()]);
     }
 }

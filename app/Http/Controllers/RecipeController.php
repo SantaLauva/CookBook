@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CookBookRecipe;
 use App\Recipe;
 use App\WantToMakeList;
 use Illuminate\Http\Request;
@@ -153,7 +154,10 @@ class RecipeController extends Controller
     {
         $recipe = Recipe::find($id);
         if (Auth::User()->id == $recipe->user_id) {
-            Recipe::find($id)->delete();
+            Recipe::find($id)->delete();           
+            WantToMakeList::where('recipe_id', '=', $id)->delete();
+            CookBookRecipe::where('recipe_id', '=', $id)->delete();
+            Comment::where('recipe_id', '=', $id)->delete();
             return redirect()->action('RecipeController@index');
         }
         else return redirect()->action('RecipeController@show', $id);

@@ -1,0 +1,29 @@
+div.recipegallery {
+    margin: 10px 15px;
+}
+
+div.recipe {
+  margin: 15px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+  height: 260px;
+}
+
+div.recipe:hover {
+  border: 1px solid #777;
+}
+
+div.recipe img {
+  width: 100%;
+  height: auto;
+}
+
+div.title {
+  padding: 15px;
+  text-align: center;
+}
+
+.link {
+    margin: 0px 15px;
+}
