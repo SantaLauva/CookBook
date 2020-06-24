@@ -48,9 +48,9 @@
             <select name="list">
                 <option value="">Select CookBook</option>
                 <option value="new">Create new CookBook</option>
-                @foreach(session()->get('lists') as $L)
+                @if (session()->has('lists')) @foreach(session()->get('lists') as $L)
                 <option value="{{ $L->title }}">{{ $L->title }}</option>
-                @endforeach
+                @endforeach @endif
             </select>
 
             @if(Auth::User()->id == $recipe->user_id)
