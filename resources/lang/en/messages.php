@@ -34,6 +34,8 @@ return [
     'Medium' => 'Medium',
     'Hard'=> 'Hard',
     'Create Recipe' => 'Create Recipe',
+    'Serves' => 'Serves',
+    'Write your comment: ' => 'Write your comment: ',
 
  
 ]; 
