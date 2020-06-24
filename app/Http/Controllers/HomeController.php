@@ -26,11 +26,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', ['recipes' => 
-            Recipe::whereIn('id', WantToMakeList::where('user_id', '=', Auth::User()->id)->pluck('recipe_id'))->take(3)->get()]);
+        return view('home', ['tryListRecipes' => 
+            Recipe::whereIn('id', WantToMakeList::where('user_id', '=', Auth::User()->id)->pluck('recipe_id'))->take(3)->get(),
+            'recipes' => Recipe::where('user_id', '=', Auth::User()->id)->take(3)->get()]);
     }
     
     public function showTryList() {
         return view('TryList', ['allrecipes' => Recipe::whereIn('id', WantToMakeList::where('user_id', '=', Auth::User()->id)->pluck('recipe_id'))->get()]);
+    }
+    
+    public function showUserRecipes() {
+        return view('UserRecipes', ['allrecipes' => Recipe::where('user_id', '=', Auth::User()->id)->get()]);
     }
 }

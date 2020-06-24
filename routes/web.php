@@ -40,6 +40,8 @@ Route::get('Recipe/{id}/post', 'RecipeController@addToTryList');
 
 Route::get('/Try', 'HomeController@showTryList');
 
+Route::get('/MyRecipes', 'HomeController@showUserRecipes');
+
 //for searching recipes
 Route::any ( '/search', function () {
     $q = Request::get ( 'q' );
