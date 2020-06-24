@@ -16,7 +16,7 @@ class AllCookBooksController extends Controller
      */
     public function index()
     {
-        //
+        return view('AllCookBooks');
     }
 
     /**
@@ -80,7 +80,7 @@ class AllCookBooksController extends Controller
      */
     public function show()
     {
-        return view('AllCookBooks');
+        
     }
 
     /**

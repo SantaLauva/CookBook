@@ -94,6 +94,7 @@
                 <option value="{{ $L->id }}">{{ $L->title }}</option>
                 @endforeach @endif
             </select><br>
+            
             <div id="addToList" style="display: none;"><br>    
             {!! Form::submit(__('messages.Add'), ['class' => 'btn btn-success']) !!}
             </div>

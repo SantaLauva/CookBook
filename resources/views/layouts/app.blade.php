@@ -41,7 +41,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li><a class="nav-link" href="{{ action('RecipeController@index') }}">{{ __('messages.Recipes') }}</a></li>
-                        <li><a class="nav-link" href="{{ action('AllCookBooksController@show') }}">{{ __('messages.CookBooks') }}</a></li>
+                        <li><a class="nav-link" href="{{ action('AllCookBooksController@index') }}">{{ __('messages.CookBooks') }}</a></li>
                         @if (Auth::user())
                             <li><a class="nav-link" href="{{ action('RecipeController@create') }}">{{ __('messages.Add Recipe') }}</a></li>
                         @endif                           
