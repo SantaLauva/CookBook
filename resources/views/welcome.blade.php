@@ -48,8 +48,6 @@
 </div>
 @if(count($allrecipes)> 0 )
 
-
-
    <!--Retrieve user recipes-->
             <h3 class="recipes_tile">{{__('messages.Latest User recipes')}}</h3>
             <div class="container ">
@@ -68,17 +66,13 @@
                     </div>
                 </div>
             </div>       
-         
-
 
 @else
 <div>
     <h3>Nothing found!</h3>
 </div>
 
-
-
-       @endif   
+@endif   
    
 
 @endsection

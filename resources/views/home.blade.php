@@ -37,6 +37,15 @@
                 @endif
                 
                 <div class="link"><a href="/Try">More</a></div>
+            </div> <br>
+            
+            <div class="card">
+                <div class="card-header">Your Recipes</div>
+
+                <div class="card-body">
+                    Here will be listed Recipes you added
+                </div>
+                
             </div>
             
         </div>
