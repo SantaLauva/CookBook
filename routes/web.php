@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome', ['allrecipes' => Recipe::all()]);
+    return view('welcome', ['allrecipes' => Recipe::all()->reverse()->take(6)]);
 });
 
 Auth::routes();

@@ -55,7 +55,7 @@
             <div class="container ">
             <div class="row">
                 <div class="welcome_recipe_gallery">
-                    @foreach($allrecipes->reverse() as $recipe)
+                    @foreach($allrecipes as $recipe)
                         <div class='recipe'>
                             <a href="/Recipe/{{ $recipe->id }}">
                             <img src="{{ asset('storage/'.$recipe->image) }}" alt='picture' height="250" width="300">
