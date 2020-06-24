@@ -27,7 +27,7 @@
                 </div>
                 @endif
                 
-                <div class="link"><a href="/Try">More</a></div>
+                <div class="link"><a href="/MyCookBooks">More</a></div>
                 
             </div> <br>
             

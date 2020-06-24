@@ -42,6 +42,6 @@ class HomeController extends Controller
     }
     
     public function showUserCookBooks() {
-        return view('UserCookBooks', ['allCookBooks' => Recipe::where('user_id', '=', Auth::User()->id)->get()]);
+        return view('UserCookBooks', ['allCookBooks' => CookBook::where('user_id', '=', Auth::User()->id)->get()]);
     }
 }

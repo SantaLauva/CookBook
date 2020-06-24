@@ -43,8 +43,8 @@ Route::get('Recipe/{id}/delete', 'RecipeController@destroy');
 Route::get('Recipe/{id}/post', 'RecipeController@addToTryList');
 
 Route::get('/Try', 'HomeController@showTryList');
-
 Route::get('/MyRecipes', 'HomeController@showUserRecipes');
+Route::get('/MyCookBooks', 'HomeController@showUserCookBooks');
 
 //for searching recipes
 Route::any ( '/search', function () {
