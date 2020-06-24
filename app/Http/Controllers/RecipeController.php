@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\CookBookRecipe;
+use App\Comment;
 use App\Recipe;
+use App\RecipeInCookBook;
 use App\WantToMakeList;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -47,7 +48,7 @@ class RecipeController extends Controller
             'prep' => 'required|string|max:10',
             'cook' => 'required|string|max:10',
             'difficulty' => 'required',
-            'serves' => 'required',
+            'serves' => 'required|integer',
             'ingredients' => 'required|string|min:2|max:10000',
             'preparation' => 'required|string|min:2|max:10000',
             'image' => 'required|file|image|max:5000'
@@ -115,7 +116,7 @@ class RecipeController extends Controller
             'prep' => 'required|string|max:10',
             'cook' => 'required|string|max:10',
             'difficulty' => 'required',
-            'serves' => 'required',
+            'serves' => 'required|integer',
             'ingredients' => 'required|string|min:2|max:10000',
             'preparation' => 'required|string|min:2|max:10000',
             'image' => 'file|image|max:5000'
@@ -156,7 +157,7 @@ class RecipeController extends Controller
         if (Auth::User()->id == $recipe->user_id) {
             Recipe::find($id)->delete();           
             WantToMakeList::where('recipe_id', '=', $id)->delete();
-            CookBookRecipe::where('recipe_id', '=', $id)->delete();
+            RecipeInCookBook::where('recipe_id', '=', $id)->delete();
             Comment::where('recipe_id', '=', $id)->delete();
             return redirect()->action('RecipeController@index');
         }

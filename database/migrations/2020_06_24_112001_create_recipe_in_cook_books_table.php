@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCookbookrecipesTable extends Migration
+class CreateRecipeInCookBooksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCookbookrecipesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cookbookrecipes', function (Blueprint $table) {
+        Schema::create('recipe_in_cook_books', function (Blueprint $table) {
             $table->id();
             $table->foreignID('recipe_id')->constrained();
             $table->foreignID('cookbook_id')->constrained();
@@ -28,6 +28,6 @@ class CreateCookbookrecipesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cookbookrecipes');
+        Schema::dropIfExists('recipe_in_cook_books');
     }
 }

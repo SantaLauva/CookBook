@@ -17,7 +17,7 @@ class Recipe extends Model
     }
     
     public function cookbookrecipes() {
-        return $this->hasMany('App\CookBookRecipe');
+        return $this->hasMany('App\RecipeInCookBook');
     }
     
     public function picture() {

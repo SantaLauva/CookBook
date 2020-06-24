@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CookBookRecipe extends Model
+class RecipeInCookBook extends Model
 {
     protected $fillable = [
         'cookbook_id', 'recipe_id',
