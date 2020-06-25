@@ -25,9 +25,14 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ implode(', ', $user->roles()->get()->pluck('name')->toArray()) }}</td> <!-- implode, lai atdalitu,, ja lietotajam ir varakas lomas -->
                             <td>
-                                <a href="{{ action('Admin\UserController@edit', $user->id) }}">
+                                <a href="{{ action('Admin\UserController@edit', $user->id) }}" class='float-left'>
                                     <button type="button" class='btn btn-primary btn-sm'>Edit</button>
                                 </a>
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                    @csrf
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" class='btn btn-danger btn-sm float-left'>DELETE</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
