@@ -53,20 +53,20 @@
         </div>
 
         <div class="preparation">
-            <h5>Ingredients: </h5>
+            <h5>{{__('messages.Ingredients')}}:</h5>
             <pre class="ingredients" style="white-space: pre-wrap; word-break: keep-all;"> {{ $recipe->ingredients }} </pre>
-            <h5>Preparation: </h5>
+            <h5>{{__('messages.Preparation')}}: </h5>
             <pre class="prep" style="white-space: pre-wrap; word-break: keep-all;"> {{ $recipe->preparation }} </pre>
         </div>
     </div>
     @if (Auth::User())
         <div class="right">
 
-            <h5>Add to CookBook</h5>
+            <h5>{{__('messages.Add to CookBook')}}</h5>
             {{ Form::open(array('url' => 'Recipe/'.$recipe->id.'/add')) }}
             <select id="list" name="list" onchange="myfunction()">
-                <option value="">Select CookBook</option>
-                <option value="new">Create new CookBook</option>
+                <option value="">{{__('messages.Select CookBook')}}</option>
+                <option value="new">{{__('messages.Create new CookBook')}}</option>
                 @if (session()->has('lists')) @foreach(session()->get('lists') as $L)
                 <option value="{{ $L->id }}">{{ $L->title }}</option>
                 @endforeach @endif
@@ -92,17 +92,17 @@
             </div>       
 
             @if(Auth::User()->id == $recipe->user_id)
-                <h5>Edit Recipe</h5>
-                <button type="button" id="edit" onclick="window.location='{{ action('RecipeController@edit', $recipe) }}'">Edit</button>
-                <h5>Delete Recipe</h5>
-                <button type="button" id="delete" onclick="window.location='{{ action('RecipeController@destroy', $recipe->id) }}'">Delete</button>
+                <h5>{{__('messages.Edit Recipe')}}</h5>
+                <button type="button" id="edit" onclick="window.location='{{ action('RecipeController@edit', $recipe) }}'">{{__('messages.Edit')}}</button>
+                <h5>{{__('messages.Delete Recipe')}}</h5>
+                <button type="button" id="delete" onclick="window.location='{{ action('RecipeController@destroy', $recipe->id) }}'">{{__('messages.Delete')}}</button>
             @endif
 
             @if (session()->has('res'))
-                <h5 id="show"> You want to make this recipe!</h5>
+                <h5 id="show">{{__('messages.You want to make this recipe!')}}</h5>
             @else
-                <h5 id="hide">Do you want to try this recipe?</h5>
-                <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">Want To Try</button>  
+                <h5 id="hide">{{__('messages.Do you want to try this recipe?')}}</h5>
+                <button type="button" id="try" onclick="window.location='{{ action('RecipeController@addToTryList', $recipe->id) }}'">{{__('messages.Want To Try')}}</button>  
             @endif
         </div>
     @endif

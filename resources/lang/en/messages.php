@@ -52,6 +52,16 @@ return [
     'COOK:' => 'COOK:',
     'SERVES' => 'SERVES',
     'Add' => 'Add',
+    'Add to CookBook' => 'Add to CookBook',
+    'Select CookBook' => 'Select CookBook',
+    'Create new CookBook' => 'Create new CookBook',
+    'Edit Recipe' => 'Edit Recipe',
+    'Edit' => 'Edit',
+    'Delete' => 'Delete',
+    'Delete Recipe' => 'Delete Recipe',
+    'Do you want to try this recipe?' => 'Do you want to try this recipe?',
+    'Want To Try' => 'Want To Try',
+    'You want to make this recipe!' => 'You want to make this recipe!',
 
  
 ]; 
