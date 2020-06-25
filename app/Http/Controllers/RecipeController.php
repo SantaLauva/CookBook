@@ -84,7 +84,11 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
-        return view('Recipe', ['recipe' => Recipe::find($id)]);
+        $R = Recipe::whereIn('id', session()->get('recipes'))->get();
+        $i = count($R);
+        
+        return view('Recipe', ['recipe' => Recipe::find($id),
+            'recently' => ]);
     }
 
     /**

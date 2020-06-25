@@ -159,7 +159,7 @@
         </div>
     @endif
     
-    <span>{{$recipe->comments->count()}} {{str_plural('comment', $recipe->comments->count()) }}</span>
+    <div>{{$recipe->comments->count()}} {{str_plural('comment', $recipe->comments->count()) }}</div>
     <br><hr>
     
     @foreach ($recipe->comments->reverse() as $comment)
@@ -169,6 +169,20 @@
         <hr>
     </div>
     @endforeach
+</div>
+
+
+
+<div class="SeenPrevious">
+    <h4>Recently viewed</h4>
+    
+    @if(session()->has('recipes'))
+        @foreach ($recently as $rec)
+        <div>
+           {{ $rec->title }}
+        </div>
+        @endforeach
+    @endif
 </div>
 
 @endsection
