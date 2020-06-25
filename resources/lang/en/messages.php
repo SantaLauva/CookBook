@@ -36,6 +36,22 @@ return [
     'Create Recipe' => 'Create Recipe',
     'Serves' => 'Serves',
     'Write your comment: ' => 'Write your comment: ',
+    'All Recipes' => 'All Recipes',
+    'Update' => 'Update',
+    'Your CookBooks' => 'Your CookBooks',
+    'In your Want To Try List' => 'In your Want To Try List',
+    'Nothing found!' => 'Nothing found!',
+    'There is nothing you want to try...' => 'There is nothing you want to try...',
+    'Your Recipes' => 'Your Recipes',
+    'You havent added any new recipe...' => 'You havent added any new recipe...',
+    'More...' => 'More...',
+    'You dont have any CookBook...' => 'You dont have any CookBook...',
+    'Your CookBooks' => 'Your CookBooks',
+    'You want to make...' => 'You want to make...',
+    'PREP:' => 'PREP:',
+    'COOK:' => 'COOK:',
+    'SERVES' => 'SERVES',
+    'Add' => 'Add',
 
  
 ]; 

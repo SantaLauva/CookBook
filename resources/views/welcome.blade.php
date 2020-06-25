@@ -69,7 +69,7 @@
 
 @else
 <div>
-    <h3>Nothing found!</h3>
+    <h3>{{__('messages.Nothing found!')}}</h3>
 </div>
 
 @endif   

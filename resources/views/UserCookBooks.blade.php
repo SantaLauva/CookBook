@@ -3,7 +3,7 @@
 <link href="{{asset ('css/AllCookBooks.css')}}" rel="stylesheet">
 
 @section('content')
-<h1>Your CookBooks</h1>
+<h1>{{__('messages.Your CookBooks')}}</h1>
 
 <div class='main'>
     @foreach ($allCookBooks as $CookBook)

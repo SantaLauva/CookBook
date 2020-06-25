@@ -2,6 +2,6 @@
 
 @section('title')
 
-    <h1>All Recipes</h1>
+    <h1>{{__('messages.All Recipes')}}</h1>
     
 @endsection
