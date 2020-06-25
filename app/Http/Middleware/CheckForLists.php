@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use App\Cookbook;
-use App\Recipe;
 use App\WantToMakeList;
 use Closure;
 use Illuminate\Http\Request;
@@ -35,11 +34,6 @@ class CheckForLists
             }
         }
         
-        //session()->forget('recipes');
-        $R = Recipe::where('id', '=', $request->id)->pluck('id');
-        foreach ($R as $r) {
-            session()->push('recipes', $r);
-        }
 
         return $next($request);
     }

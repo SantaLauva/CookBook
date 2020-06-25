@@ -20,29 +20,6 @@
             document.getElementById("addToList").style.display = "none";
         }
     }
-     
-
-    $(".newlistbutton").click(function(e){
-        $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-        });
-    
-        var data = $(this).serialize();
-        var url = '{{ action('AllCookBooksController@store', $recipe->id) }}';
-
-        $.ajax({
-           url:url,
-           method:'POST',
-           data:data,
-           
-           success: function(result){
-                  alert("beidzot");
-
-           },
-        });
-    });
     
 </script>
 
@@ -101,7 +78,7 @@
             {!! Form::close() !!}
             
             <div id="createNew" style="display: none;">
-                {{ Form::open() }}
+                {{ Form::open(array('url' => 'Recipe/'.$recipe->id.'/new')) }}
                 <div>   
                     {{ Form::label('title', __('messages.Title')) }}
                     {{ Form::text('title') }}   
