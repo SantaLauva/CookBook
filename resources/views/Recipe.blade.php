@@ -148,19 +148,5 @@
     @endforeach
 </div>
 
-
-
-<div class="SeenPrevious">
-    <h4>Recently viewed</h4>
-    
-    @if(session()->has('recipes'))
-        @foreach ($recently as $rec)
-        <div>
-           {{ $rec->title }}
-        </div>
-        @endforeach
-    @endif
-</div>
-
 @endsection
 

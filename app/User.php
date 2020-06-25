@@ -47,14 +47,21 @@ class User extends Authenticatable
     public function wantToMakeListRecipes() {
         return $this->hasMany('App\WantToMakeList');
     }
-    
-    public function tryLists() {
-        return $this->hasMany('WantToMakeList');
-    }
             
     //added relationship for comments
     public function comments() {
         return $this->hasMany('App\Comment');
     }
+    
+    public function roles() {
+        return $this->belongsToMany('App\Role');
+    }
 
+    public function hasAnyRoles($roles) {
+        return null !== $this->roles()->whereIn('name', $roles)->first();
+    }
+    
+    public function hasAnyRole($roles) {
+        return null !== $this->roles()->where('name', $roles)->first();
+    }
 }

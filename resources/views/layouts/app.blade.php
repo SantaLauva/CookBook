@@ -44,7 +44,11 @@
                         <li><a class="nav-link" href="{{ action('AllCookBooksController@index') }}">{{ __('messages.CookBooks') }}</a></li>
                         @if (Auth::user())
                             <li><a class="nav-link" href="{{ action('RecipeController@create') }}">{{ __('messages.Add Recipe') }}</a></li>
-                        @endif                           
+                        @endif
+                        
+                        @if ((Auth::user()) && (Auth::User()->hasAnyRole('admin')))
+                            <li><a class="nav-link" href="{{ action('Admin\UserController@index') }}">Admin</a></li>
+                        @endif
 
                     </ul>
 
