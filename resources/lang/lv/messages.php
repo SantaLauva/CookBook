@@ -61,5 +61,6 @@ return [
     'Do you want to try this recipe?' => 'Vai vēlies izmēģināt šo recepti?',
     'Want To Try' => 'Vēlos izmēģināt!',
     'You want to make this recipe!' => 'Recepte pievienota tavam taisāmo recepšu sarakstam!',
+    'Recipes in ' => 'Receptes tavā ',
  
 ]; 

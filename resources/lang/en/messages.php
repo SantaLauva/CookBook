@@ -62,6 +62,7 @@ return [
     'Do you want to try this recipe?' => 'Do you want to try this recipe?',
     'Want To Try' => 'Want To Try',
     'You want to make this recipe!' => 'You want to make this recipe!',
+    'Recipes in ' => 'Recipes in ',
 
  
 ]; 

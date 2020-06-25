@@ -2,7 +2,7 @@
 <link href="{{asset ('css/AllRecipes.css')}}" rel="stylesheet">
 
 @section('content')
-<h1>Recipes in {{ $title }}</h1>
+<h1>{{__('messages.Recipes in ')}}{{ $title }}</h1>
 
 <div class="recipegallery">
     @foreach($allrecipes as $recipe)
