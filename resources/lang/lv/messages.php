@@ -46,7 +46,7 @@ return [
     'More...' => 'Vairāk...',
     'You dont have any CookBook...' => 'Tev vēl nav izveidota pavārgrāmata...',
     'Your CookBooks' => 'Tavas pavārgrāmatas',
-    'You want to make these...' => 'Tu vēlies pagatavot...',
+    'You want to make...' => 'Tu vēlies pagatavot...',
     'PREP:' => 'SAGATAVOT:',
     'COOK:' => 'CEPT:',
     'SERVES' => 'PORCIJAS',
