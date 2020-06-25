@@ -65,5 +65,4 @@ Route::get('lang/{locale}','LanguageController');
 //for user comments
 Route::post('Recipe/comment', 'CommentController@store');
 
-Route::get('/admin', function() { return "you are admin"; })->middleware(['auth', 'auth.admin']);
-Route::resource('/admin/users', 'Admin\UserController', ['except' => ['show', 'create', 'store']]);
+Route::resource('/admin/users', 'Admin\UserController', ['except' => ['show', 'create', 'store']])->middleware(['auth', 'auth.admin']);
