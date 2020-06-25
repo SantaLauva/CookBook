@@ -37,16 +37,16 @@
             <div class="in-row">
                 <div class="a">
                     <i class="material-icons">schedule</i> 
-                    PREP: {{ $recipe->prep }} </div>
+                    {{__('messages.PREP:')}} {{ $recipe->prep }} </div>
                 <div class="a">
                     <i class="material-icons">history</i>
-                    COOK: {{ $recipe->cook }} </div>
+                    {{__('messages.COOK:')}} {{ $recipe->cook }} </div>
                 <div class="a">
                     <i class="material-icons">construction</i>
                     {{ $recipe->difficulty }} </div>
                 <div class="a">
                     <i class="material-icons">restaurant</i>
-                    SERVES {{ $recipe->serves }} </div>
+                    {{__('messages.SERVES')}} {{ $recipe->serves }} </div>
             </div>
 
             <div class="description"> {{ $recipe->description }} </div>

@@ -2,6 +2,6 @@
 
 @section('title')
 
-    <h1>You want to make these...</h1>
+    <h1>{{__('messages.You want to make...')}}</h1>
 
 @endsection

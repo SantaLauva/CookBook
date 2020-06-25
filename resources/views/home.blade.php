@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Your CookBooks</div>
+                <div class="card-header text-center">{{__('messages.Your CookBooks')}}</div>
                 
                 <div class="recipegallery">
                     @foreach ($cookbooks as $cookbook)               
@@ -23,16 +23,16 @@
                 
                 @if (count($cookbooks) == 0) 
                 <div class="card-body">
-                    You don't have any CookBook...
+                {{__('messages.You dont have any CookBook...')}}
                 </div>
                 @endif
                 
-                <div class="link"><a href="/MyCookBooks">More</a></div>
+                <div class="link"><a href="/MyCookBooks">{{__('messages.More...')}}</a></div>
                 
             </div> <br>
             
             <div class="card">
-                <div class="card-header">In your Want To Try List</div>
+                <div class="card-header text-center">{{__('messages.In your Want To Try List')}}</div>
                 
                 <div class="recipegallery">
                 @foreach ($tryListRecipes as $recipe)
@@ -49,15 +49,15 @@
                 
                 @if (count($tryListRecipes) == 0) 
                 <div class="card-body">
-                    There is nothing you want to try...
+                {{__('messages.There is nothing you want to try...')}}
                 </div>
                 @endif
                 
-                <div class="link"><a href="/Try">More</a></div>
+                <div class="link"><a href="/Try">{{__('messages.More...')}}</a></div>
             </div> <br>
             
             <div class="card">
-                <div class="card-header">Your Recipes</div>
+                <div class="card-header text-center">{{__('messages.Your Recipes')}}</div>
 
                 <div class="recipegallery">
                 @foreach ($recipes as $recipe)
@@ -74,11 +74,11 @@
                 
                 @if (count($recipes) == 0) 
                 <div class="card-body">
-                    You haven't added any recipe...
+                {{__('messages.You havent added any new recipe...')}}
                 </div>
                 @endif
                 
-                <div class="link"><a href="/MyRecipes">More</a></div>
+                <div class="link"><a href="/MyRecipes">{{__('messages.More...')}}</a></div>
                 
             </div>
             

@@ -49,6 +49,11 @@
     <div>
         <h3>Nothing found!</h3>
     </div>
+
+<div>
+    <h3>{{__('messages.Nothing found!')}}</h3>
+</div>
+
 @endif   
    
 @endsection
